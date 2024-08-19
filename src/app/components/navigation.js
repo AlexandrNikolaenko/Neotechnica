@@ -1,12 +1,13 @@
 'use client'
 
+import Link from "next/link";
 import { BaseLink, OpenLink } from "./navLink";
 
 export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
     switch (activeBlock) {
         case 'about': {
             return (
-                <ul className="flex flex-col gap-y-5">
+                <ul className={`flex flex-col gap-y-5 sticky`}>
                     <li>
                         <BaseLink isActive={activePage == 'news'} url={'/about/news'} text={'Новости'} action={() => setActivePoint('news')}/>
                     </li>
@@ -33,7 +34,7 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
         };
         case 'prodation': {
             return (
-                <ul>
+                <ul className={`flex flex-col gap-y-5 h-[${window.innerHeight - 132}px] overflow-y-scroll`}>
                     <li>
                         <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')}/>
                     </li> 
@@ -74,6 +75,16 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
             return <></>
         }
     }
+}
 
-    
+export function FooterTitleLink ({text, isLightColor}) {
+    return (
+        <p className={`${isLightColor ? 'text-white' : 'text-light-blue'}`}>{text}</p>
+    )
+}
+
+export function FooterLink ({text, isLightColor, url}) {
+    return (
+        <Link className={`${isLightColor ? 'text-white' : 'text-light-blue'}`} href={url}>{text}</Link>
+    )
 }
