@@ -2,7 +2,7 @@ import Image from "next/image";
 import Header from "./components/header";
 import Link from "next/link";
 import { BaseButton } from "./components/buttons";
-import { News } from "./components/news";
+import { OneNews } from "./components/news";
 
 export default function Home() {
   return (
@@ -32,8 +32,6 @@ export default function Home() {
             <BaseButton text={'Все новости'} isLink={true} url={'/about/news'}/>
           </div>
           <div className={'flex flex-col gap-5'}>
-            <News isLast={true}/>
-            <News isPenult={true}/>
           </div>
         </div>
       </section>

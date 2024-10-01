@@ -77,9 +77,9 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
     }
 }
 
-export function FooterTitleLink ({text, isLightColor}) {
+export function FooterTitleLink ({text, isLightColor, url}) {
     return (
-        <p className={`${isLightColor ? 'text-white' : 'text-light-blue'}`}>{text}</p>
+        <Link href={url} className={`${isLightColor ? 'text-white' : 'text-light-blue'}`}>{text}</Link>
     )
 }
 
