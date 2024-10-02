@@ -1,23 +1,27 @@
 'use client'
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Image from "next/image"
-import { BlobImage } from "./images"
+import { NewsImage } from "./images"
+import { host } from "./host"
 
 export function OneNews({title, text, date, img}) {
-    const [isOpen, setIsOpen] = useState(false)
+    const [isOpen, setIsOpen] = useState(false);
+    console.log(text);
 
     return (
-        <div className={'w-full bg-contain bg-left-top'} style={{background: 'url(/left-up-corner.png)'}}>
-            <div className={'w-full flex justify-between bg-contain bg-left-top py-7 px-12'} style={{background: 'url(/right-down-corner.png)'}}>
-                <BlobImage img={img}/>
-                <div>
-                    <p>{date}</p>
-                    <h3>{title}</h3>
-                    <p className={`${isOpen ? 'line-clamp-none' : 'line-clamp-3'}`}>{text}</p>
-                    <button className="flex" onClick={() => setIsOpen(!isOpen)}>
-                        <p>{isOpen ? 'Скрыть' : 'Показать'}</p>
-                        <Image src="arrow-dowm.svg" alt="arrow" width={19} height={19} className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}></Image>
+        <div className={'w-full bg-auto bg-left-top bg-no-repeat'} style={{backgroundImage: 'url(/left-up-corner.png)'}}>
+            <div className={'flex gap-7 items-center justify-between bg-auto bg-right-bottom py-7 px-12 bg-no-repeat'} style={{backgroundImage: 'url(/right-down-corner.png)'}}>
+                <div className="w-[260px] h-auto">
+                    <Image alt='Фотография для новости' src={img} width={260} height={140}/>
+                </div>
+                <div className="max-w-[708px]">
+                    <p className="text-base font-bold text-dark-blue">{date}</p>
+                    <h3 className="text-subtitle font-bold text-dark-blue">{title}</h3>
+                    <p className={`${isOpen ? 'line-clamp-none' : 'line-clamp-3'} text-base text-dark-blue`}>{text}</p>
+                    <button className="flex items-center" onClick={() => {console.log(!isOpen); setIsOpen(!isOpen)}}>
+                        <p className="text-base font-bold text-blue">{isOpen ? 'Скрыть' : 'Показать'}</p>
+                        <Image src="/arrow-down.svg" alt="arrow" width={19} height={19} className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}></Image>
                     </button>
                 </div>
             </div>
@@ -25,9 +29,21 @@ export function OneNews({title, text, date, img}) {
     )
 }
 
-export async function ListNews ({amount}) {
+export function ListNews ({start, end}) {
+    const [list, setList] = useState([])
+
+    useEffect(() => {
+        async function getData() {
+            await fetch(`http://${host}:5000/getnews?start=${start}&end=${end}`, {method: 'GET'})
+                .then(res => res.json())
+                .then(data => {if (list.length == 0) setList(data)})
+        };
+        getData()
+    });
+
     return (
-        <>
-        </>
+        <div className="flex flex-col gap-y-5 pb-5">
+            {list.map(elem => <OneNews key={elem.id} title={elem.title} text={elem.text} date={elem.date} img={`/news/${elem.imgName}`}/>)}
+        </div>
     )
 }
