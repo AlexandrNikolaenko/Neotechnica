@@ -7,7 +7,6 @@ import { host } from "./host"
 
 export function OneNews({title, text, date, img}) {
     const [isOpen, setIsOpen] = useState(false);
-    console.log(text);
 
     return (
         <div className={'w-full bg-auto bg-left-top bg-no-repeat'} style={{backgroundImage: 'url(/left-up-corner.png)'}}>
@@ -15,7 +14,7 @@ export function OneNews({title, text, date, img}) {
                 <div className="w-[260px] h-auto">
                     <Image alt='Фотография для новости' src={img} width={260} height={140}/>
                 </div>
-                <div className="max-w-[708px]">
+                <div className="max-w-[615px]">
                     <p className="text-base font-bold text-dark-blue">{date}</p>
                     <h3 className="text-subtitle font-bold text-dark-blue">{title}</h3>
                     <p className={`${isOpen ? 'line-clamp-none' : 'line-clamp-3'} text-base text-dark-blue`}>{text}</p>

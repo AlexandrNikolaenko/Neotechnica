@@ -7,7 +7,7 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
     switch (activeBlock) {
         case 'about': {
             return (
-                <ul className={`flex flex-col gap-y-5 sticky`}>
+                <ul className={`flex flex-col gap-y-5 sticky z-40`}>
                     <li>
                         <BaseLink isActive={activePage == 'news'} url={'/about/news'} text={'Новости'} action={() => setActivePoint('news')}/>
                     </li>
@@ -32,9 +32,9 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
                 </ul>
             )
         };
-        case 'prodation': {
+        case 'prodaction': {
             return (
-                <ul className={`flex flex-col gap-y-5 h-[${window.innerHeight - 132}px] overflow-y-scroll`}>
+                <ul className={`flex flex-col gap-y-5 h-[${window.innerHeight - 132}px] overflow-y-scroll z-40`}>
                     <li>
                         <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')}/>
                     </li> 
@@ -61,7 +61,7 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
         };
         case 'career': {
             return (
-                <ul className="flex flex-col gap-y-5">
+                <ul className="flex flex-col gap-y-5 z-40">
                     <li>
                         <BaseLink isActive={activePage == 'vacantions'} url={'/career/vacancies'} text={'Вакансии'} action={() => setActivePoint('vacantions')}/>
                     </li>

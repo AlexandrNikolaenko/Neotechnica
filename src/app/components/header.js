@@ -5,7 +5,7 @@ import Link from "next/link"
 
 export default function Header ({activePage, action}){
     return (
-        <header className="fixed w-full border-b-[1px] border-blue border-opacity-20 bg-white">
+        <header className="fixed w-full border-b-[1px] border-blue border-opacity-20 bg-white z-50">
             <div className="flex wrapper py-3 justify-between items-center">
                 <Logo />
                 <nav>

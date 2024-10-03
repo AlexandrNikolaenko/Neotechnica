@@ -7,3 +7,9 @@ export function BaseButton({text, isLink, url, action}){
         </>
     )
 }
+
+export function FileButton({link}) {
+    return (
+        <button className="px-3 py-2.5 bg-light-blue text-xs">{link}</button>
+    )
+}

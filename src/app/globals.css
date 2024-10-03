@@ -9,4 +9,7 @@
   padding-left: 20px;
 }
 
+.wrapper-sep {
+  grid-template-columns: auto 211px;
+}
 
