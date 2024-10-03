@@ -10,7 +10,7 @@ export default function AboutLayout ({children}) {
     return (
         <>
             <Header activePage={'about'} action={() => setActivePoint('about')}/>
-            <div className="wrapper flex gap-6 pt-[132px] pb-20">
+            <div className="wrapper grid wrapper-sep-r gap-6 pt-[132px] pb-20">
                 <NavMenu activeBlock={'about'} activePage={activePoint} setActivePoint={setActivePoint}/>
                 {children}
             </div>

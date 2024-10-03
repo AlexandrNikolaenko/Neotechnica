@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue: #55B0E4;
+  --bark-blue: #082E4A;
+  --dark: #292929;
+  --light-blue: #B6E9FF;
+}
+
 .wrapper {
   max-width: 1240px;
   margin: 0 auto;
@@ -13,3 +20,20 @@
   grid-template-columns: auto 211px;
 }
 
+.wrapper-sep-r {
+  grid-template-columns: 211px 1fr;
+}
+
+h5 {
+  font-size: 20px;
+  color: var(--blue);
+  font-weight: bold;
+}
+
+p {
+  color: var(--bark-blue);
+}
+
+ul {
+  list-style-position: inside;
+}

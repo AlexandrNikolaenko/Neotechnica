@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FileButton } from "../components/buttons";
+import FileList from "../components/rightFileList";
 
 export default function About() {
     return (
@@ -13,14 +14,14 @@ export default function About() {
                 <Image src={'/about-photo.jpg'} alt={'Our production'} width={440} height={211}/>
                 <p className="text-base text-dark-blue">Основная доля продукции компании поставляется промышленным предприятиям, а так же фирмам интеграторам, работающим в сфере автоматизации.</p>
             </div>
-            <ul className={'flex flex-col gap-y-5 max-w-[211px]'}>
+            <FileList>
                 <Image src={'/cert-about.jpg'} width={211} height={283} alt="Certificate"/>
                 <FileButton link={'Презентация_ Неотехника.pdf'}/>
                 <FileButton link={'Сертификат соответствия ГОСТ Р ИСО 9001-2015.pdf (1809kb)'}/>
                 <FileButton link={'Политика в области качества .pdf (462kb)'}/>
                 <FileButton link={'Свидетельство кластера ИТ и электроника Томской области .jpg (252kb)'}/>
                 <FileButton link={'Свидетельство Томской торгово-промышленной палаты.jpg (438kb)'}/>
-            </ul>
+            </FileList>
         </div>
     )
 }
