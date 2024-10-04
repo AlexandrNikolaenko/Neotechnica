@@ -9,7 +9,7 @@ export default function ListCertificate ({name, start, end}) {
         <div className="grid grid-cols-3 w-full gap-3 h-[530px] overflow-y-scroll">
             {list.map(n => {
                 return (
-                    <button key={n} className="h-[464px] w-[320px] bg-cover bg-no-repeat bg-center bord_frame" style={{backgroundImage: `url(/${name}${n}.jpg)`}}></button>
+                    <button key={n} className="h-[464px] w-full bg-cover bg-no-repeat bg-center bord_frame" style={{backgroundImage: `url(/${name}${n}.jpg)`}}></button>
                 )
             })}
         </div>

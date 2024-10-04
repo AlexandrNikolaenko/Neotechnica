@@ -51,5 +51,6 @@ ul {
   border: 5px solid;
   border-width: 5px;
   /* border-image: linear-gradient(to left, #743ad5, #d53a9d); */
-  border-image: linear-gradient(to bottom right, var(--blue), var(--light-blue), var(--dark-blue)) 320;
+  border-image: linear-gradient(to bottom right, var(--blue), var(--light-blue), var(--dark-blue));
+  border-image-slice: 100;
 }
