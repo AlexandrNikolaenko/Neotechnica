@@ -4,7 +4,7 @@
 
 :root {
   --blue: #55B0E4;
-  --bark-blue: #082E4A;
+  --dark-blue: #082E4A;
   --dark: #292929;
   --light-blue: #B6E9FF;
 }
@@ -31,7 +31,7 @@ h5 {
 }
 
 p {
-  color: var(--bark-blue);
+  color: var(--dark-blue);
 }
 
 ul {
@@ -45,4 +45,11 @@ ul {
 
 .base_button:hover, .base_button:active, .base_button:focus{
   background-image: url(/buttonFon-d.svg);
+}
+
+.bord_frame{
+  border: 5px solid;
+  border-width: 5px;
+  /* border-image: linear-gradient(to left, #743ad5, #d53a9d); */
+  border-image: linear-gradient(to bottom right, var(--blue), var(--light-blue), var(--dark-blue)) 320;
 }
