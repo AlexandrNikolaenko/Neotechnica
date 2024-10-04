@@ -3,6 +3,7 @@ import Header from "./components/header";
 import Link from "next/link";
 import { BaseButton } from "./components/buttons";
 import { ListNews } from "./components/news";
+import PhotoLinks from "./components/photoLink";
 
 export default function Home() {
   return (
@@ -18,13 +19,8 @@ export default function Home() {
           <Image alt={'Участник проекта "Производительность.РФ"'} src={'/PartProject.png'} width={250} height={250}/>
         </div>
         <div className={'flex flex-col gap-5 items-end'}>
-          <div className={'grid grid-cols-2'}>
-            
-          </div>
-          <div className={'grid grid-cols-3'}>
-
-          </div>
-          <Link href={'/prodaction'} className="text-minititle text-dark-blue">Смотреть больше...</Link>
+          <PhotoLinks />
+          <Link href={'/prodaction'} className="text-minititle text-dark-blue font-bold hover:text-blue active:text-blue focus:text-blue duration-200">Смотреть больше...</Link>
         </div>
         <div>
           <div className="flex justify-between items-center">

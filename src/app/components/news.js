@@ -20,7 +20,7 @@ export function OneNews({title, text, date, img}) {
                     <p className={`${isOpen ? 'line-clamp-none' : 'line-clamp-3'} text-base text-dark-blue`}>{text}</p>
                     <button className="flex items-center" onClick={() => {console.log(!isOpen); setIsOpen(!isOpen)}}>
                         <p className="text-base font-bold text-blue">{isOpen ? 'Скрыть' : 'Показать'}</p>
-                        <Image src="/arrow-down.svg" alt="arrow" width={19} height={19} className={`${isOpen ? 'rotate-180' : 'rotate-0'}`}></Image>
+                        <Image src="/arrow-down.svg" alt="arrow" width={19} height={19} className={`${isOpen ? 'rotate-180' : 'rotate-0'} transition-all duration-150`}></Image>
                     </button>
                 </div>
             </div>

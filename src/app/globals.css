@@ -37,3 +37,12 @@ p {
 ul {
   list-style-position: inside;
 }
+
+.base_button{
+  background-image: url(/buttonFon.svg);
+  transition: all .2;
+}
+
+.base_button:hover, .base_button:active, .base_button:focus{
+  background-image: url(/buttonFon-d.svg);
+}
