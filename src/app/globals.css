@@ -43,7 +43,7 @@ ul {
   transition: all .2;
 }
 
-.base_button:hover, .base_button:active, .base_button:focus{
+.base_button:hover, .base_button:active{
   background-image: url(/buttonFon-d.svg);
 }
 
@@ -53,4 +53,8 @@ ul {
   /* border-image: linear-gradient(to left, #743ad5, #d53a9d); */
   border-image: linear-gradient(to bottom right, var(--blue), var(--light-blue), var(--dark-blue));
   border-image-slice: 100;
+}
+
+.button-blue-bg{ 
+  background-image: linear-gradient(rgb(182, 233, 255, 0), rgb(182, 233, 255, 0.35), white);
 }
