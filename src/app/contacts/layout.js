@@ -1,11 +1,11 @@
 import Header from "../components/header"
 
-export default function ContactsLayout () {
+export default function ContactsLayout ({children}) {
     return (
         <>
             <Header activePage={'contacts'}/>
-            <div className="wrapper flex gap-6 pt-[132px] pb-20">
-                
+            <div className="wrapper pt-[132px] pb-20">
+                {children}
             </div>
         </>
     )

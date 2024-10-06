@@ -58,3 +58,33 @@ ul {
 .button-blue-bg{ 
   background-image: linear-gradient(rgb(182, 233, 255, 0), rgb(182, 233, 255, 0.35), white);
 }
+
+.none {
+  display: none;
+}
+
+@keyframes opacityAnimate {
+  0% {
+      opacity: 1;
+      scale: 1;
+      display: flex;
+  }
+  99%{
+     display: flex;
+  }
+  100% {
+      display: none;
+      opacity: 0;
+      scale: 10;
+  }
+}
+
+.hide-anim{
+  animation: 1s ease 1.5s 1 opacityAnimate;
+  animation-fill-mode: both;
+}
+
+.grid-contact{
+  display: grid;
+  grid-template-columns: 450px 1fr;
+}
