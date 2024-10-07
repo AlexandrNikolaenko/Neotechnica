@@ -3,14 +3,6 @@
 import Image from "next/image"
 
 export default function Competencies () {
-    // window.onload = function () {
-    //     setTimeout(function () {
-    //         let elem = document.getElementById('flex');
-    //         console.log(elem.classList)
-    //         elem.classList.remove('flex');
-    //         elem.classList.add('none');
-    //     }, 10000);
-    //     };
     return (
     <div className="flex flex-col gap-y-6">
         <h1 className="text-title font-bold text-dark-blue">Наши компетенции</h1>

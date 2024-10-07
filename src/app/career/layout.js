@@ -10,7 +10,7 @@ export default function CareerLayout ({children}) {
     return (
         <>
             <Header activePage={'career'} action={() => setActivePoint('career')}/>
-            <div className="wrapper flex gap-6 pt-[132px] pb-20">
+            <div className="wrapper grid wrapper-sep-r gap-6 pt-[132px] pb-20">
                 <NavMenu activeBlock={'career'} activePage={activePoint} setActivePoint={setActivePoint}/>
                 {children}
             </div>

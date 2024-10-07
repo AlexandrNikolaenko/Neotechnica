@@ -1,4 +1,6 @@
-import Image from "next/image"
+import Image from "next/image";
+import { host } from "../components/host";
+import YandexMap from "../components/map";
 
 export default function Contacts () {
     return (
@@ -14,13 +16,25 @@ export default function Contacts () {
                     <p className="text-minititle text-dark">634506 г. Томск, п. Светлый, 58а, а/я 129</p>
                 </div>
             </div>
-            <AllContactsBlock amount={10}/>
+            <AllContactsBlock/>
+            <h5 className="text-minititle">Место нахождения (юридический адрес)</h5>
+            <p className="text-base">634538, Томская область, р-н Томский, Ул 4 км (дорога Михайловка - Александровское тер.), строение № 3</p>
+            <h5 className="text-minititle">Режим работы</h5>
+            <p className="text-base">Понедельник-четверг 8:00-17:00, пятница 8:00-16:00. Обед 12:00-13:00. Выходные: суббота, воскресенье.</p>
+            <div className="w-full ratio-contacts bg-center bg-cover bg-no-repeat" style={{backgroundImage: 'url(/ContactsMap.jpg)'}}></div>
+            <YandexMap />
         </div>
     )
 }
 
-function AllContactsBlock({amount}) {
-    let list = [{id: 1, img: 'RobenkoPV.jpg', post: 'Генеральный директор', name: 'Робенков Павел Викторович', email: 'robenkov.pavel@neotechnica.ru', phone: '+7 (382-2) 46-91-19', addit: '3150 (приемная)', mob: null }]
+async function AllContactsBlock() {
+    let list;
+    // let list = [{id: 1, img: 'RobenkoPV.jpg', post: 'Генеральный директор', name: 'Робенков Павел Викторович', email: 'robenkov.pavel@neotechnica.ru', phone: '+7 (382-2) 46-91-19', addit: '3150 (приемная)', mob: null }]
+
+    await fetch(`http://${host}:5000/getcontacts/`, {method: 'GET'})
+        .then(res => res.json())
+        .then(data => list = data);
+
     return (
         <div className="flex flex-col gap-y-5">
             {list.map(person => <ContactBlock key={person.id} img={person.img} post={person.post} name={person.name} email={person.email} phone={person.phone} addit={person.addit} mob={person.mob}/>)}

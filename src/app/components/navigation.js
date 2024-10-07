@@ -61,7 +61,7 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
         };
         case 'career': {
             return (
-                <ul className="flex flex-col gap-y-5 z-40">
+                <ul className="flex flex-col sticky gap-y-5 z-40">
                     <li>
                         <BaseLink isActive={activePage == 'vacantions'} url={'/career/vacancies'} text={'Вакансии'} action={() => setActivePoint('vacantions')}/>
                     </li>
