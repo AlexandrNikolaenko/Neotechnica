@@ -28,11 +28,11 @@ export function OpenLink ({isActive, text, url, isDefaultOpen, linkChildren, act
             <div className="flex w-full justify-between">
                 <BaseLink isActive={isActive} text={text} url={url} action={action}/>
                 <button onClick={() => setIsOpen(!isOpen)}>
-                    <Image alt="arrow" src={'/Arrow.svg'}/>
+                    <Image alt="arrow" width={30} height={30} src={'/Arrow.svg'}/>
                 </button>
             </div>
             <ul className={`${isOpen ? 'block' : 'none'}`}>
-                {linkChildren.map(elem => <li key={elem.key}><MiniLink isActive={elem.isActive} text={elem.text} url={elem.url}/></li>)}
+                {/* {linkChildren.map(elem => <li key={elem.key}><MiniLink isActive={elem.isActive} text={elem.text} url={elem.url}/></li>)} */}
             </ul>
         </div>
     )
