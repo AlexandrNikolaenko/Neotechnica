@@ -19,12 +19,20 @@ export default function Condition({title, text}) {
     )
 }
 
-export function ConditionImgBlock() {
+export function ThreeImgBlock({name}) {
+    const [list, setList] = useState([1, 2, 3])
+
     return (
-        <div className="grid grid-cols-3 grid-rows-2 w-full h-[546px]">
-            <div className="col-span-2 row-span-2" style={{backgroundImage: 'url(/conditions1.jpg)'}}></div>
-            <div className="col-span-1 row-span-1"></div>
-            <div className="col-span-1 row-span-1"></div>
+        <div className="grid grid-cols-3 grid-rows-2 w-full h-[546px] gap-4">
+            <div className="col-span-2 row-span-2 overflow-hidden">
+                <button className="w-full h-full bg-cover bg-no-repeat bg-center hover:scale-105 duration-200" style={{backgroundImage: `url(/${name}${list[0]}.jpg)`}}></button>
+            </div>
+            <div className="col-span-1 row-span-1 overflow-hidden">
+                <button className="w-full h-full bg-cover bg-no-repeat bg-center hover:scale-105 duration-200" style={{backgroundImage: `url(/${name}${list[1]}.jpg)`}} onClick={() => setList([list[1], list[2], list[0]])}></button>
+            </div>
+            <div className="col-span-1 row-span-1 overflow-hidden">
+                <button className="w-full h-full bg-cover bg-no-repeat bg-center hover:scale-105 duration-200" style={{backgroundImage: `url(/${name}${list[2]}.jpg)`}} onClick={() => setList([list[2], list[0], list[1]])}></button>
+            </div>
         </div>
     )
 }
