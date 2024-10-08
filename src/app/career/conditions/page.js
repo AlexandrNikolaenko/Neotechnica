@@ -1,5 +1,5 @@
 import Condition from "@/app/components/condition";
-import { ThreeImgBlock } from "@/app/components/condition";
+import { ThreeImgBlock } from "@/app/components/imageBlocks";
 import { host } from "@/app/components/host";
 
 export default async function Conditions () {
