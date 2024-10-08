@@ -36,25 +36,25 @@ export default function NavMenu ({activeBlock, activePage, setActivePoint}) {
             return (
                 <ul className={`flex flex-col gap-y-5 h-[${window.innerHeight - 132}px] overflow-y-scroll z-40`}>
                     <li>
-                        <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')} isDefaultOpen={flalse}/>
+                        <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')} isDefaultOpen={false}/>
                     </li> 
                     <li>
-                        <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')} isDefaultOpen={flalse}/>
+                        <OpenLink isActive={activePage == 'diselandgas'} text={'Блок-контейнерные системы'} url={'/prodaction/diselandgas'} action={setActivePoint('bks')} isDefaultOpen={false}/>
                     </li> 
                     <li>
-                        <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')} isDefaultOpen={flalse}/>
+                        <OpenLink isActive={activePage == 'instrumentation'} text={'Блок-контейнерные системы'} url={'/prodaction/instrumentation'} action={setActivePoint('bks')} isDefaultOpen={false}/>
                     </li> 
                     <li>
-                        <BaseLink isActive={activePage == 'letters'} url={'/about/letters'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
+                        <BaseLink isActive={activePage == 'installation'} url={'/prodaction/installation'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
                     </li> 
                     <li>
-                        <BaseLink isActive={activePage == 'letters'} url={'/about/letters'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
+                        <BaseLink isActive={activePage == 'marking'} url={'/prodaction/marking'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
                     </li> 
                     <li>
-                        <OpenLink isActive={activePage == 'bks'} text={'Блок-контейнерные системы'} url={'/prodaction/bks'} action={setActivePoint('bks')} isDefaultOpen={flalse}/>
+                        <OpenLink isActive={activePage == 'prodservices'} text={'Блок-контейнерные системы'} url={'/prodaction/prodservices'} action={setActivePoint('bks')} isDefaultOpen={false}/>
                     </li> 
                     <li>
-                        <BaseLink isActive={activePage == 'letters'} url={'/about/letters'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
+                        <BaseLink isActive={activePage == 'laboratory'} url={'/prodaction/laboratory'} text={'Благодарственные письма'} action={() => setActivePoint('letters')}/>
                     </li> 
                 </ul>
             )
